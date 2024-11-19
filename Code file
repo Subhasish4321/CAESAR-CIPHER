@@ -13,3 +13,25 @@ def encrypt(actual_text,shift_amount):
 word=input("Give us the word to encrypt: ")
 shift_val=int(input("Give us the shift amount for the word: "))
 print(f"the encrypted word is {encrypt(word,shift_val)}")
+*****************************************************************************************************************************
+
+
+####CAESER CIPHER        
+####METHOD 2
+import string
+alphabet=list(string.ascii_lowercase)
+
+def encrypt(actual_text,shift_amount):
+    encr_text=''
+    for letter in actual_text:
+        letter_index=alphabet.index(letter)
+        shift_value=letter_index+shift_amount
+        if shift_value>25:
+            shift_value%=26## 25 beause 0-25 makes 26
+        encr_text+=alphabet[shift_value]
+    print(f"Here is your encrypted text,do not share the encryption details: {encr_text} ")
+  
+word=input("enter the word that you want to encrypt: ")
+shift_val=int(input("enter the shift amount you need to encrypt: "))
+encrypt(word,shift_val)
+    
