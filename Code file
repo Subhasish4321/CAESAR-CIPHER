@@ -21,7 +21,7 @@ print(f"the encrypted word is {encrypt(word,shift_val)}")
 import string
 alphabet=list(string.ascii_lowercase)
 
-def encrypt(actual_text,shift_amount):
+def encrypt(actual_text,shift_amount):##encryption function
     encr_text=''
     for letter in actual_text:
         letter_index=alphabet.index(letter)
@@ -33,5 +33,16 @@ def encrypt(actual_text,shift_amount):
   
 word=input("enter the word that you want to encrypt: ")
 shift_val=int(input("enter the shift amount you need to encrypt: "))
-encrypt(word,shift_val)
+###############################################################################################
+
+encrypt_text=encrypt(word,shift_val)##calling enrypt function and also storing the retured encrypted data to be passed to decode function
+def decode(encrypted_text,encrypt_amount):
+    decr_text=''
+    for letter in encrypted_text:
+        letter_index=alphabet.index(letter)
+        decrypt_value=letter_index-encrypt_amount
+        decr_text+=alphabet[decrypt_value]
+    print(f"Here is your decrypted text,do not share the encryption details: {decr_text} ")
+
+decode(encrypt_text,shift_val)
     
