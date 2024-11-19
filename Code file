@@ -1,0 +1,15 @@
+#CAESER CIPHER
+
+def encrypt(actual_text,shift_amount):
+    text=list(actual_text)
+    encr_text=''
+    for letter in text:
+        letter_val=ord(letter)
+        new_val=letter_val+shift_amount
+        new_letter=chr(new_val)
+        encr_text+=new_letter
+    return(encr_text)
+
+word=input("Give us the word to encrypt: ")
+shift_val=int(input("Give us the shift amount for the word: "))
+print(f"the encrypted word is {encrypt(word,shift_val)}")
