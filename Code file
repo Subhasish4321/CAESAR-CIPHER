@@ -1,3 +1,4 @@
+## THIS PROGRAM CONTAINS DIFFERENT SECTIONS OF SIMILAR CODES BECAUSE EACH SECTION DOES THE SAME WORK BUT THE METHOD OF CODING IMPROVES AS MOVE BELOW EACH SECTIONS.
 #CAESER CIPHER
 
 def encrypt(actual_text,shift_amount):
@@ -45,4 +46,59 @@ def decode(encrypted_text,encrypt_amount):
     print(f"Here is your decrypted text,do not share the encryption details: {decr_text} ")
 
 decode(encrypt_text,shift_val)
+
+#*******************************************************************************************************************************************#
+
+**********FINAL CODE*********************************************************FINAL CODE********************************************************
+
+
+
+        
+####METHOD 2
+import string
+alphabet=list(string.ascii_lowercase)
+
+def encrypt(actual_text,shift_amount):
+    encr_text=''
+    for letter in actual_text:
+        letter_index=alphabet.index(letter)
+        shift_value=letter_index+shift_amount
+        if shift_value>25:
+            shift_value%=26## 25 beause 0-25 makes 26
+        encr_text+=alphabet[shift_value]
+    print(f"Here is your encrypted text,do not share the encryption details: {encr_text} ")
+    return(encr_text)
+  
+
+
+def decode(encrypted_text,encrypt_amount):
+    decr_text=''
+    for letter in encrypted_text:
+        letter_index=alphabet.index(letter)
+        decrypt_value=letter_index-encrypt_amount
+        decr_text+=alphabet[decrypt_value]
+    print(f"Here is your decrypted text,do not share the encryption details: {decr_text} ")
+
+
+
+def main(wrd,shift_amt,cho):
+    if cho=='1':
+        encrypt(wrd,shift_amt)
+    elif choise=='2':
+        decode(wrd,shift_amt)
+        
+        
+shift_val=int(input("enter the shift amount you need to encrypt or decrypt: "))     
+word=input("enter the word that you want to encrypt or decrypt: ")
+choise=input("Enter 1 to Encode enter 2 to decode: ")
+main(word,shift_val,choise)
+    
+        
+        
+        
+       
+    
+    
+    
+
     
